@@ -17,7 +17,7 @@ $(EXECUTABLE): $(GO_SOURCES) assets/build
 
 .PHONY: docker
 docker: $(GO_SOURCES) 
-	GOOS=linux GOARCH=amd64 $(GOPATH)/bin/packr build -v -ldflags '-w $(LDFLAGS)' -o $(EXECUTABLE) $(MAIN_PKG)
+	GOOS=linux GOARCH=arm $(GOPATH)/bin/packr build -v -ldflags '-w $(LDFLAGS)' -o $(EXECUTABLE) $(MAIN_PKG)
 
 $(GOPATH)/bin/packr:
 	GOBIN=$(GOPATH)/bin go get -u github.com/gobuffalo/packr/packr
